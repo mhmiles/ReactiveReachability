@@ -1,7 +1,1 @@
 github "ReactiveCocoa/ReactiveCocoa" "v4.2.1"
-github "Alamofire/Alamofire"
-github "mhmiles/ListenToYouTubeClient" "74d20dc7f7f1"
-github "mhmiles/DurationPickerView" "v0.1"
-github "mhmiles/SwiftColorSampler" "v0.1"
-github "mhmiles/PodcastFeedFinder" "c8ddbbc"
-github "glock45/swifter"
