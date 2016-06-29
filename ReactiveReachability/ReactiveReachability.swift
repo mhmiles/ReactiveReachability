@@ -8,20 +8,21 @@
 
 import ReactiveCocoa
 import enum Result.NoError
-import AFNetworking.AFNetworkReachabilityManager
+import Reachability
 
 public class ReactiveReachability {
     public static let sharedReachability = ReactiveReachability()
     
-    private let reachabilitySignal: SignalProducer<NSNotification, NoError>
     public let isReachableViaWifi: AnyProperty<Bool>
     
     init() {
-        reachabilitySignal = NSNotificationCenter.defaultCenter().rac_notifications(AFNetworkingReachabilityDidChangeNotification, object: nil)
+        let reachability = try! Reachability.reachabilityForLocalWiFi()
+        
+        let reachabilityChangeSignal = NSNotificationCenter.defaultCenter().rac_notifications(ReachabilityChangedNotification, object: reachability)
         
         isReachableViaWifi = AnyProperty(initialValue: true,
-            producer: reachabilitySignal.map {($0.userInfo![AFNetworkingReachabilityNotificationStatusItem as NSString] as! NSNumber).integerValue == AFNetworkReachabilityStatus.ReachableViaWiFi.rawValue})
+                                         producer: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi() }))
         
-        AFNetworkReachabilityManager.sharedManager().startMonitoring()
+        try! reachability.startNotifier()
     }
 }

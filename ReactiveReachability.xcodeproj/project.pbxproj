@@ -14,7 +14,7 @@
 		0224375D1D245F6700960BFF /* ReactiveReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224375C1D245F6700960BFF /* ReactiveReachability.swift */; };
 		022437601D245F9B00960BFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */; };
 		022437611D245F9B00960BFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375F1D245F9B00960BFF /* Result.framework */; };
-		D4B8A95644DED0ED22AB04B0 /* Pods_ReactiveReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF98B6C554C80701E2895334 /* Pods_ReactiveReachability.framework */; };
+		02E760CD1D2467EF0035F8AD /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E760CC1D2467EF0035F8AD /* Reachability.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +38,7 @@
 		0224375C1D245F6700960BFF /* ReactiveReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveReachability.swift; sourceTree = "<group>"; };
 		0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		0224375F1D245F9B00960BFF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		0E283AEFDBBD89956D0759B9 /* Pods-ReactiveReachability.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveReachability.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveReachability/Pods-ReactiveReachability.release.xcconfig"; sourceTree = "<group>"; };
-		C927CFAF7EE278D8F74BCACD /* Pods-ReactiveReachability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveReachability.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveReachability/Pods-ReactiveReachability.debug.xcconfig"; sourceTree = "<group>"; };
-		DF98B6C554C80701E2895334 /* Pods_ReactiveReachability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveReachability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02E760CC1D2467EF0035F8AD /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E760CD1D2467EF0035F8AD /* Reachability.framework in Frameworks */,
 				022437601D245F9B00960BFF /* ReactiveCocoa.framework in Frameworks */,
 				022437611D245F9B00960BFF /* Result.framework in Frameworks */,
-				D4B8A95644DED0ED22AB04B0 /* Pods_ReactiveReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,14 +66,13 @@
 		022437341D245F4500960BFF = {
 			isa = PBXGroup;
 			children = (
+				02E760CC1D2467EF0035F8AD /* Reachability.framework */,
 				0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */,
 				0224375F1D245F9B00960BFF /* Result.framework */,
 				0224375A1D245F5600960BFF /* Cartfile */,
 				022437401D245F4500960BFF /* ReactiveReachability */,
 				0224374C1D245F4500960BFF /* ReactiveReachabilityTests */,
 				0224373F1D245F4500960BFF /* Products */,
-				1176BAD01100F977AE69BDCB /* Pods */,
-				A622EBD0FC9082B2FF10A5CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,23 +102,6 @@
 				0224374F1D245F4500960BFF /* Info.plist */,
 			);
 			path = ReactiveReachabilityTests;
-			sourceTree = "<group>";
-		};
-		1176BAD01100F977AE69BDCB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C927CFAF7EE278D8F74BCACD /* Pods-ReactiveReachability.debug.xcconfig */,
-				0E283AEFDBBD89956D0759B9 /* Pods-ReactiveReachability.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A622EBD0FC9082B2FF10A5CC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DF98B6C554C80701E2895334 /* Pods_ReactiveReachability.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,7 +364,6 @@
 		};
 		022437531D245F4500960BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C927CFAF7EE278D8F74BCACD /* Pods-ReactiveReachability.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -407,7 +386,6 @@
 		};
 		022437541D245F4500960BFF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E283AEFDBBD89956D0759B9 /* Pods-ReactiveReachability.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
