@@ -122,12 +122,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022437521D245F4500960BFF /* Build configuration list for PBXNativeTarget "ReactiveReachability" */;
 			buildPhases = (
-				E799400057E86864CADF2795 /* [CP] Check Pods Manifest.lock */,
 				022437391D245F4500960BFF /* Sources */,
 				0224373A1D245F4500960BFF /* Frameworks */,
 				0224373B1D245F4500960BFF /* Headers */,
 				0224373C1D245F4500960BFF /* Resources */,
-				ACC247AE01F4E3ED07B08A33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,39 +207,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ACC247AE01F4E3ED07B08A33 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveReachability/Pods-ReactiveReachability-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E799400057E86864CADF2795 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		022437391D245F4500960BFF /* Sources */ = {
