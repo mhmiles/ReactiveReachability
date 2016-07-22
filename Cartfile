@@ -1,2 +1,2 @@
-github "ReactiveCocoa/ReactiveCocoa" "v4.2.1"
-github "ashleymills/Reachability.swift"
+github "ReactiveCocoa/ReactiveCocoa" ~> 4.2
+github "ashleymills/Reachability.swift" ~> 2.3

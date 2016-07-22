@@ -14,6 +14,9 @@
 		0224375D1D245F6700960BFF /* ReactiveReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224375C1D245F6700960BFF /* ReactiveReachability.swift */; };
 		022437601D245F9B00960BFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */; };
 		022437611D245F9B00960BFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375F1D245F9B00960BFF /* Result.framework */; };
+		0284A68B1D41EB2600056E24 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E760CC1D2467EF0035F8AD /* Reachability.framework */; };
+		0284A68C1D41EB2600056E24 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */; };
+		0284A68D1D41EB2600056E24 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375F1D245F9B00960BFF /* Result.framework */; };
 		02E760CD1D2467EF0035F8AD /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E760CC1D2467EF0035F8AD /* Reachability.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0284A68B1D41EB2600056E24 /* Reachability.framework in Frameworks */,
+				0284A68C1D41EB2600056E24 /* ReactiveCocoa.framework in Frameworks */,
+				0284A68D1D41EB2600056E24 /* Result.framework in Frameworks */,
 				022437491D245F4500960BFF /* ReactiveReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +149,7 @@
 				022437441D245F4500960BFF /* Sources */,
 				022437451D245F4500960BFF /* Frameworks */,
 				022437461D245F4500960BFF /* Resources */,
+				0284A68E1D41EB2F00056E24 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,6 +214,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0284A68E1D41EB2F00056E24 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		022437391D245F4500960BFF /* Sources */ = {
@@ -375,6 +401,10 @@
 		022437561D245F4500960BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveReachabilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.ReactiveReachabilityTests;
@@ -385,6 +415,10 @@
 		022437571D245F4500960BFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveReachabilityTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.ReactiveReachabilityTests;
