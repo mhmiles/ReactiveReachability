@@ -15,11 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ReactiveReachability.sharedReachability.isReachableViaWifiProducer.startWithNext { (isReachableViaWifi) in
+        ReactiveReachability.sharedReachability.isReachableViaWiFi.producer.startWithNext { (isReachableViaWifi) in
             self.imageView.tintColor = isReachableViaWifi ? UIColor.greenColor() : UIColor.redColor()
-            print("WIFI: \(isReachableViaWifi)")
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

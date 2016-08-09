@@ -13,14 +13,10 @@ import Reachability
 public class ReactiveReachability {
     public static let sharedReachability = ReactiveReachability()
     
-    public lazy var isReachableViaWifiProducer: SignalProducer<Bool, NoError> = {
+    public lazy var isReachableViaWiFi: AnyProperty<Bool> = {
         let reachabilityChangeSignal = NSNotificationCenter.defaultCenter().rac_notifications(ReachabilityChangedNotification, object: self.reachability)
-        try! self.reachability.startNotifier()
         
-        return SignalProducer<Bool, NoError> { observer, disposable in
-            observer.sendNext(self.reachability.isReachableViaWiFi())
-            disposable += reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi() }).start(observer)
-        }
+        return AnyProperty(initialValue: self.reachability.isReachableViaWiFi(), producer: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi() }))
     }()
     
     private let reachability = try! Reachability.reachabilityForLocalWiFi()
