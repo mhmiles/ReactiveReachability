@@ -14,6 +14,8 @@
 		0224375D1D245F6700960BFF /* ReactiveReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0224375C1D245F6700960BFF /* ReactiveReachability.swift */; };
 		022437601D245F9B00960BFF /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */; };
 		022437611D245F9B00960BFF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375F1D245F9B00960BFF /* Result.framework */; };
+		0252522B1D6CD5C000A09322 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252522A1D6CD5C000A09322 /* ReactiveSwift.framework */; };
+		0252522C1D6CD6F800A09322 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252522A1D6CD5C000A09322 /* ReactiveSwift.framework */; };
 		0284A68B1D41EB2600056E24 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E760CC1D2467EF0035F8AD /* Reachability.framework */; };
 		0284A68C1D41EB2600056E24 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */; };
 		0284A68D1D41EB2600056E24 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0224375F1D245F9B00960BFF /* Result.framework */; };
@@ -71,6 +73,7 @@
 		0224375C1D245F6700960BFF /* ReactiveReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveReachability.swift; sourceTree = "<group>"; };
 		0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		0224375F1D245F9B00960BFF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		0252522A1D6CD5C000A09322 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		02E760CC1D2467EF0035F8AD /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 		02F116EB1D5A58B400DA4E81 /* Sample App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sample App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02F116ED1D5A58B400DA4E81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0252522B1D6CD5C000A09322 /* ReactiveSwift.framework in Frameworks */,
 				02E760CD1D2467EF0035F8AD /* Reachability.framework in Frameworks */,
 				022437601D245F9B00960BFF /* ReactiveCocoa.framework in Frameworks */,
 				022437611D245F9B00960BFF /* Result.framework in Frameworks */,
@@ -107,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0252522C1D6CD6F800A09322 /* ReactiveSwift.framework in Frameworks */,
 				0295E3E81D5A5955002A1ECD /* Reachability.framework in Frameworks */,
 				0295E3E91D5A5955002A1ECD /* ReactiveCocoa.framework in Frameworks */,
 				0295E3EA1D5A5955002A1ECD /* Result.framework in Frameworks */,
@@ -119,14 +124,12 @@
 		022437341D245F4500960BFF = {
 			isa = PBXGroup;
 			children = (
-				02E760CC1D2467EF0035F8AD /* Reachability.framework */,
-				0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */,
-				0224375F1D245F9B00960BFF /* Result.framework */,
 				0224375A1D245F5600960BFF /* Cartfile */,
 				022437401D245F4500960BFF /* ReactiveReachability */,
 				0224374C1D245F4500960BFF /* ReactiveReachabilityTests */,
 				02F116EC1D5A58B400DA4E81 /* Sample App */,
 				0224373F1D245F4500960BFF /* Products */,
+				025252291D6CD5C000A09322 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +160,17 @@
 				0224374F1D245F4500960BFF /* Info.plist */,
 			);
 			path = ReactiveReachabilityTests;
+			sourceTree = "<group>";
+		};
+		025252291D6CD5C000A09322 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02E760CC1D2467EF0035F8AD /* Reachability.framework */,
+				0224375E1D245F9B00960BFF /* ReactiveCocoa.framework */,
+				0224375F1D245F9B00960BFF /* Result.framework */,
+				0252522A1D6CD5C000A09322 /* ReactiveSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		02F116EC1D5A58B400DA4E81 /* Sample App */ = {
@@ -250,17 +264,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Miles Hollingsworth";
 				TargetAttributes = {
 					0224373D1D245F4500960BFF = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					022437471D245F4500960BFF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7XLNECBC46;
 					};
 					02F116EA1D5A58B400DA4E81 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7XLNECBC46;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -322,6 +340,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -338,6 +357,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -423,8 +443,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -473,8 +495,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -494,6 +518,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -505,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -520,6 +546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -527,6 +554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -541,12 +569,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.ReactiveReachability;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		022437561D245F4500960BFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7XLNECBC46;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -561,6 +591,7 @@
 		022437571D245F4500960BFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 7XLNECBC46;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -575,8 +606,9 @@
 		02F117051D5A58B400DA4E81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = 7XLNECBC46;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -586,14 +618,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		02F117061D5A58B400DA4E81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				DEVELOPMENT_TEAM = 7XLNECBC46;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -603,6 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hollylabs.Sample-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

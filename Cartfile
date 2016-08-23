@@ -1,2 +1,2 @@
-github "ReactiveCocoa/ReactiveCocoa" ~> 4.2
-github "ashleymills/Reachability.swift" ~> 2.3
+github "ReactiveCocoa/ReactiveCocoa" "reactive-swift"
+github "ashleymills/Reachability.swift" "feature/ios10"

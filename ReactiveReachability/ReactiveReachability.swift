@@ -7,17 +7,22 @@
 //
 
 import ReactiveCocoa
+import ReactiveSwift
 import enum Result.NoError
 import Reachability
 
-public class ReactiveReachability {
-    public static let sharedReachability = ReactiveReachability()
+open class ReactiveReachability {
+    open static let sharedReachability = ReactiveReachability()
     
-    public lazy var isReachableViaWiFi: AnyProperty<Bool> = {
-        let reachabilityChangeSignal = NSNotificationCenter.defaultCenter().rac_notifications(ReachabilityChangedNotification, object: self.reachability)
+    open lazy var isReachableViaWiFi: Property<Bool> = {
+        let reachabilityChangeSignal = NotificationCenter.default.rac_notifications(forName: ReachabilityChangedNotification, object: self.reachability)
         
-        return AnyProperty(initialValue: self.reachability.isReachableViaWiFi(), producer: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi() }))
+        return Property(initial: self.reachability.isReachableViaWiFi, then: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi }))
     }()
     
-    private let reachability = try! Reachability.reachabilityForLocalWiFi()
+    fileprivate let reachability = Reachability()!
+    
+    init() {
+        try! reachability.startNotifier()
+    }
 }
