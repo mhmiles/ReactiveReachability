@@ -6,7 +6,6 @@
 //  Copyright © 2015 Miles Hollingsworth. All rights reserved.
 //
 
-import ReactiveCocoa
 import ReactiveSwift
 import enum Result.NoError
 import Reachability
