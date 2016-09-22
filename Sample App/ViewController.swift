@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ReactiveReachability.sharedReachability.isReachableViaWiFi.producer.startWithNext { (isReachableViaWifi) in
-            self.imageView.tintColor = isReachableViaWifi ? UIColor.greenColor() : UIColor.redColor()
+        ReactiveReachability.sharedReachability.isReachableViaWiFi.producer.startWithValues { (isReachableViaWifi) in
+            self.imageView.tintColor = isReachableViaWifi ? UIColor.green : UIColor.red
         }
     }
 
