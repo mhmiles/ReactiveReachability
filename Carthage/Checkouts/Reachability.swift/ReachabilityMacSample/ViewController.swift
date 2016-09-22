@@ -49,7 +49,11 @@ class ViewController: NSViewController {
         self.updateLabelColourWhenNotReachable(reachability)
       }
     } else {
+<<<<<<< HEAD
+      NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: reachability)
+=======
       NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: reachability)
+>>>>>>> feature/ios10
     }
   }
 
