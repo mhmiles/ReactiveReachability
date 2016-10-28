@@ -14,14 +14,18 @@ open class ReactiveReachability {
     open static let sharedReachability = ReactiveReachability()
     
     open lazy var isReachableViaWiFi: Property<Bool> = {
-        let reachabilityChangeSignal = NotificationCenter.default.rac_notifications(forName: ReachabilityChangedNotification, object: self.reachability)
+        guard let reachability = self.reachability else {
+            return Property(value: false)
+        }
         
-        return Property(initial: self.reachability.isReachableViaWiFi, then: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi }))
+        let reachabilityChangeSignal = NotificationCenter.default.reactive.notifications(forName: ReachabilityChangedNotification, object: self.reachability)
+        
+        return Property(initial: reachability.isReachableViaWiFi, then: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi }))
     }()
     
-    fileprivate let reachability = Reachability()!
+    fileprivate let reachability = Reachability()
     
     init() {
-        try! reachability.startNotifier()
+        try! reachability?.startNotifier()
     }
 }

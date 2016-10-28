@@ -261,16 +261,17 @@
 				TargetAttributes = {
 					0224373D1D245F4500960BFF = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					022437471D245F4500960BFF = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7XLNECBC46;
+						LastSwiftMigration = 0810;
 					};
 					02F116EA1D5A58B400DA4E81 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 7XLNECBC46;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -575,6 +576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.ReactiveReachabilityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -590,6 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hollylabs.ReactiveReachabilityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
