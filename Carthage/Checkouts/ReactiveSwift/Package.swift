@@ -1,21 +1,23 @@
+import Foundation
 import PackageDescription
+
+var isSwiftPackagerManagerTest: Bool {
+    return ProcessInfo.processInfo.environment["SWIFTPM_TEST_ReactiveSwift"] == "YES"
+}
 
 let package = Package(
     name: "ReactiveSwift",
     dependencies: {
-        #if os(macOS)
-            return [
-                .Package(url: "https://github.com/antitypical/Result.git", majorVersion: 3, minor: 0),
+        var deps: [Package.Dependency] = [
+            .Package(url: "https://github.com/antitypical/Result.git", versions: Version(3, 2, 1)..<Version(3, .max, .max)),
+        ]
+        if isSwiftPackagerManagerTest {
+            deps += [
+                .Package(url: "https://github.com/Quick/Quick.git", majorVersion: 1, minor: 1),
+                .Package(url: "https://github.com/Quick/Nimble.git", majorVersion: 7),
             ]
-        #else
-            return [
-                .Package(url: "https://github.com/antitypical/Result.git", majorVersion: 3, minor: 0),
-                .Package(url: "https://github.com/Quick/Nimble", majorVersion: 5, minor: 0),
-                .Package(url: "https://github.com/Quick/Quick", majorVersion: 0, minor: 10),
-            ]
-        #endif
+        }
+        return deps
     }(),
-    exclude: [
-        "Sources/Deprecations+Removals.swift",
-    ]
+    swiftLanguageVersions: [3, 4]
 )
