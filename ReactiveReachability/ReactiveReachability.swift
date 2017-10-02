@@ -18,7 +18,7 @@ open class ReactiveReachability {
             return Property(value: false)
         }
         
-        let reachabilityChangeSignal = NotificationCenter.default.reactive.notifications(forName: Notification.Name.reachabilityChanged, object: self.reachability)
+        let reachabilityChangeSignal = NotificationCenter.default.reactive.notifications(forName: ReachabilityChangedNotification, object: nil)
         
         return Property(initial: reachability.isReachableViaWiFi, then: reachabilityChangeSignal.map ({ ($0.object as! Reachability).isReachableViaWiFi }))
     }()
