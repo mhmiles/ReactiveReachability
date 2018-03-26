@@ -11,9 +11,9 @@ import enum Result.NoError
 import Reachability
 
 open class ReactiveReachability {
-    open static let sharedReachability = ReactiveReachability()
+    public static let sharedReachability = ReactiveReachability()
     
-    open lazy var isReachableViaWiFi: Property<Bool> = {
+    public private(set) lazy var isReachableViaWiFi: Property<Bool> = {
         guard let reachability = self.reachability else {
             return Property(value: false)
         }
@@ -23,9 +23,13 @@ open class ReactiveReachability {
         return Property(initial: reachability.connection == .wifi, then: reachabilityChangeSignal.map ({ ($0.object as! Reachability).connection == .wifi}))
     }()
     
-    fileprivate let reachability = Reachability()
+    private let reachability = Reachability()
     
     init() {
-        try! reachability?.startNotifier()
+      do {
+        try reachability?.startNotifier()
+      } catch let error {
+        print(error)
+      }
     }
 }
